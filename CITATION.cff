@@ -12,12 +12,16 @@ authors:
     family-names: Tyler
     email: max.tyler@st.com
     affiliation: STMicroelectronics
+  - given-names: Suraj
+    family-names: Goel
+    email: goel.suraj5@gmail.com
+    affiliation: Heriot-Watt University
 identifiers:
   - type: url
     value: >-
-      https://github.com/maxastyler/rusty-slm/releases/tag/v0.2.0
-    description: Release v0.2.0 of Rusty SLM
-repository-code: 'https://github.com/maxastyler/rusty-slm'
+      https://github.com/surajgoel5/rusty-slm/
+    description: Rusty SLM
+repository-code: 'https://github.com/surajgoel5/rusty-slm'
 abstract: >-
   A program for controlling SLMs with rust and python. The
   server is implemented in rust with grpc, allowing for

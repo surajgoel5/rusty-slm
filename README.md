@@ -1,22 +1,24 @@
 # Rusty-SLM
 
-This is a program for controlling SLMs with rust and python. The server is implemented in rust with grpc, allowing for
-control from any programming language that can connect to a web endpoint.
+Forked from [maxastyler's rusty-slm](https://github.com/maxastyler/rusty-slm), this version of rusty-slm runs on minimal requirements on python with backwards compatibility. 
+
+This is a program for controlling SLMs with rust and python. The server is implemented in rust with grpc, allowing for control from any programming language that can connect to a web endpoint.
 
 ## Binaries
 
 There's binaries in the releases section to download, which should run on windows and linux without extra stuff.
 
-## Server Compilation
+
+## Server Compilation (As a user, you don't need to perfrom this step)
 
 ### Windows
 
 For compiling on windows:
 
-1) Install rust (using [rustup](https://rustup.rs/). You'll probably need to install the msvc c++ build-tools as well)
-2) Install the [Vulkan SDK](https://www.lunarg.com/vulkan-sdk/)
+1) Install rust (using [rustup](https://rustup.rs/). You'll probably need to install the msvc c++ build-tools as well). 
+2) Install the [Vulkan SDK](https://www.lunarg.com/vulkan-sdk/). (Note from Suraj: Max recommends this but I don't think this is necessary)
 3) Download this repository, and go into the root directory
-4) Run `cargo build --release`
+4) Run `cargo build --release`. Make sure cargo binaries from rust are in your environment variables. 
 5) The executable should be created as: `target/release/rusty-slm-server.exe`
 6) Run this executable from the terminal with a port number like: `rusty-slm-server.exe 9000`
 
@@ -29,15 +31,19 @@ Follow the same instructions as windows, but remove the `.exe` from the file nam
 
 Probably the same as linux?
 
+
+After you are done with compilation of the appropriate server files, please make a copy them in the [./rusty-slm/binaries/](./rusty-slm/binaries/) folder.
+
+
 ## Python Client Installation
 
 This repo also contains a simple python client for communicating with the server. You can install this through pip with:
 
-    pip install git+https://github.com/maxastyler/rusty-slm
+    pip install git+https://github.com/surajgoel5/rusty-slm
 
 ### Client Usage
 
-Import the `rusty_slm` package into python, and create an `SLMController` object.
+Import the `rusty_slm` package into python, and create an `SLMController` (or `SLMClient`) object.
 
 ```python
 import numpy as np

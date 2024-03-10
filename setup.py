@@ -2,11 +2,13 @@ from setuptools import setup, find_packages
 
 setup(
     name="rusty_slm",
-    version="1.0.0",
-    url="https://github.com/maxastyler/rusty-slm",
-    author="Max Tyler",
-    author_email="maxastyler@gmail.com",
-    description="Functions to interact with an SLM",
+    version="2.0.0",
+    url="https://github.com/surajgoel5/rusty-slm",
+    author="Max Tyler, Suraj Goel",
+    author_email="maxastyler@gmail.com, goel.suraj5@gmail.com",
+    description="Forked from Max Tyler's - Functions to interact with an SLM, imporved to use lower versions of python and backward compatibility",
     packages=find_packages(include=["rusty_slm"]),
-    install_requires=["grpcio==1.48", "grpcio-tools==1.48"],
+    include_package_data=True,
+    install_requires=["grpcio>=1.15.0"],
+    package_data={'rusty-slm': ['binaries/*']},
 )

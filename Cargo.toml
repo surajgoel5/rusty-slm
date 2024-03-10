@@ -1,7 +1,7 @@
 [package]
 name = "rusty-slm"
-version = "0.2.0"
-authors = ["Max Tyler <maxastyler@gmail.com>"]
+version = "2.0.0"
+authors = ["Max Tyler <maxastyler@gmail.com>","Suraj Goel <goel.suraj5@gmail.com>"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

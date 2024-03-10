@@ -1,15 +1,14 @@
 [tool.poetry]
 name = "rusty-slm"
-version = "0.2.0"
-description = "Functions to interact with an SLM"
-authors = ["maxastyler <maxastyler@gmail.com>"]
+version = "2.0.0"
+description = "Forked from Max Tyler's - Functions to interact with an SLM, imporved to use lower versions of python and backward compatibility"
+authors = ["maxastyler <maxastyler@gmail.com>","surajgoel5 <goel.suraj5@gmail.com>"]
 license = "GPLv3"
 readme = "README.md"
 packages = [{ include = "rusty_slm" }]
 
 [tool.poetry.dependencies]
-grpcio = "^1.51.1"
-grpcio-tools = "^1.51.1"
+grpcio = "^1.15.0"
 
 
 [build-system]

@@ -1,7 +1,7 @@
-from importlib.resources import files
+from importlib_resources import files
 from platform import system
 from subprocess import Popen
-from typing import Any
+from typing import Any,Sequence, Tuple,Union
 
 import grpc
 
@@ -33,7 +33,7 @@ class SLMBinaryRunner:
         self.process = self.run_process()
 
     def run_process(self) -> Popen:
-        binary_location = files("rusty_slm").joinpath(binary_name())
+        binary_location = files("rusty_slm").joinpath('binaries/').joinpath(binary_name())
         return Popen(
             [
                 f"{binary_location}",
@@ -48,7 +48,7 @@ class SLMClient:
     """A client for the rusty SLM server"""
 
     def __init__(
-            self, port, address="localhost", channel_options: None | list[tuple[str, Any]] = None
+            self, port, address="localhost", channel_options: Union[None, Sequence[Tuple[str,Any]]] = None
     ):
         self.address = address
         self.port = port
@@ -92,6 +92,6 @@ class SLM(SLMClient):
     """A class extending SLMClient, providing a server to run along with it"""
 
     def __init__(self, port: int, monitor: int = 0, address="localhost",
-                 channel_options: None | list[tuple[str, Any]] = None):
+                 channel_options: Union[None, Sequence[Tuple[str,Any]]]= None):
         self.binary = SLMBinaryRunner(port, monitor)
         super().__init__(port, address, channel_options=channel_options)
