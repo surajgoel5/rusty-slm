@@ -9,6 +9,6 @@ setup(
     description="Forked from Max Tyler's - Functions to interact with an SLM, imporved to use lower versions of python and backward compatibility",
     packages=find_packages(include=["rusty_slm"]),
     include_package_data=True,
-    install_requires=["grpcio>=1.15.0","importlib-resources"],
+    install_requires=["grpcio>=1.15.0","importlib-resources","protobuf"],
     package_data={'rusty-slm': ['binaries/*']},
 )
